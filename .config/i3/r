@@ -1,0 +1,179 @@
+# GENERAL {{{
+
+set $mod Mod4
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# start a terminal
+bindsym $mod+Return exec urxvtc 
+
+# start a browser
+bindsym $mod+z exec google-chrome-stable
+
+# start a file manager
+bindsym $mod+e exec thunar 
+
+# start a calculator
+bindsym $mod+w exec firefox
+
+# lock screen
+bindsym XF86ScreenSaver exec --no-startup-id "~/bin/lock.sh"
+bindsym XF86Launch1 exec --no-startup-id "xset dpms force off"
+bindsym $mod+F2 exec "~/bin/toggle-touchpad.sh"
+bindsym $mod+F3 exec "~/bin/caffeine.sh"
+
+# kill focused window
+bindsym $mod+q kill
+
+# dmenu (rofi)
+bindsym $mod+space exec --no-startup-id "rofi -show drun -hide-scrollbar"
+
+# alternatively, you can use the cursor keys:
+
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+g split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+#bindsym $mod+s layout stacking
+#bindsym $mod+w layout tabbed
+bindsym $mod+y layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+s floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+Ctrl+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+# switch to workspace
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+
+assign [class="mpv"] -> 3
+assign [class="smplayer"] -> 3
+assign [class="firefox"] -> 1
+assign [class="spotify"] -> 6
+assign [class="skypeforlinux"] -> 6
+assign [class="gimp"] -> 5
+assign [class="google-chrome-stable"] -> 2 
+assign [class="vmware"] -> 2
+
+# reload the configuration file
+bindsym $mod+Escape reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+Escape restart
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+# fancy windows
+gaps inner 7 
+gaps outer 7
+
+smart_gaps on
+
+for_window [class="^.*"] border pixel 0 
+
+#focus_follows_mouse no
+
+mouse_warping none
+
+# print screen
+bindsym Print exec "~/bin/scr"
+bindsym $mod+Print exec --no-startup-id "xfce4-screenshooter"
+
+bindsym $mod+r mode "resize"
+
+# Audio Control
+bindsym XF86AudioRaiseVolume exec --no-startup-id "pulseaudio-ctl up 4"
+bindsym XF86AudioLowerVolume exec --no-startup-id "pulseaudio-ctl up 4"
+bindsym XF86AudioMute exec --no-startup-id "pulseaudio-ctl mute"
+bindsym XF86AudioMicMute exec --no-startup-id "pulseaudio-ctl mute-input"
+
+bindsym XF86AudioPlay exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
+bindsym XF86AudioNext exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
+bindsym XF86AudioPrev exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
+bindsym $mod+Ctrl+Escape exec --no-startup-id i3-nagbar -f 'Roboto' -m 'What do you want to do?' -b 'Shutdown in 60 minutes' 'shutdown -P +60 --no-wall && killall i3-nagbar' -b 'Shutdown now' 'shutdown -P now' 
+
+bindsym $mod+Shift+F10 exec "mpc -q prev"
+bindsym $mod+Shift+F11 exec "mpc -q toggle"
+bindsym $mod+Shift+F12 exec "mpc -q next"
+
+# Wallpapers Cycle
+bindsym $mod+F1 exec "~/bin/polyh.sh"
+# Brightness Control
+bindsym XF86BrightnessUp exec --no-startup-id "xbacklight -inc 5"
+bindsym XF86BrightnessDown exec --no-startup-id "xbacklight -dec 5"
+
+# window colors
+#                       border              background         text                  indicator
+client.focused          $bg-color           $text-color        $text-color           $text-color
+client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color  $inactive-bg-color
+client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color  $inactive-bg-color
+client.urgent           $urgent-bg-color    $urgent-bg-color   $inactive-text-color  $urgent-bg-color
+
+# Startup
+exec_always --no-startup-id $HOME/bin/wal-set &
+exec_always --no-startup-id "polybar top &"
+
+# }}}
+
+# vim:filetype=i3
