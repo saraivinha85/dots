@@ -1,0 +1,82 @@
+! ------------------------------------------------------------------------------
+! ROFI Color theme
+! ------------------------------------------------------------------------------
+rofi.color-enabled: true
+
+!                  bg       border   separator
+!rofi.color-window: #181818, #9B2323, #9B2323
+!                  bg       fg       bg-alt   hl-bg    hl-fg
+!rofi.color-normal: #181818, #c5c8c6, #181818, #1e1e20, #fff
+!rofi.color-active: #181818, #c5c8c6, #181818, #1e1e20, #fff
+!rofi.color-urgent: #181818, #c6c8c6, #181818, #1e1e20, #fff
+
+rofi.width: 40
+rofi.font: Iosevka 7
+rofi.hight: 14
+rofi.separator: dash
+rofi.sidebare-mode: false
+rofi.lines: 10
+rofi.bw: 2
+rofi.fixed-num-lines: true
+rofi.hide-scrollbar: true
+rofi.terminal: urxvt
+rofi.yoffset: 36
+rofi.show-icons: true
+
+! Desktop/Laptop Settings.
+
+URxvt*letterSpace: 0
+URxvt*allow_bold: true
+
+Xft.dpi: 96
+Xft.autohint: 0
+Xft.antialias: 1
+Xft.hinting: 1
+Xft.hintstyle: hintfull
+Xft.rgba: rgb
+Xft.lcdfilter: lcddefault
+
+! Disable scrollbar
+URxvt.scrollBar: false
+
+! Separate settings for vim
+vim.internalBorder: 0 
+
+! Set terminal padding
+URxvt.internalBorder:   14
+URxvt.externalBorder:   14
+URxvt.depth:            32
+URxvt*terminalName:     rxvt-unicode-256color
+
+! Enables copy/paste with Ctrl-Shift-C/V
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+URxvt.perl-ext-common: default,clipboard,matcher
+URxvt.keysym.Shift-Control-C: perl:clipboard:copy
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+
+URxvt.url-launcher: /usr/bin/waterfox
+Urxvt.matcher.button:	1
+URxvt*loginShell:	true
+
+! -- font:
+!URxvt.font: xft:crispy:size=8
+!URxvt.boldFont: xft:crispy:size=8
+
+!URxvt.font: xft:Operator Mono Medium:size=7,xft:SourcePro+Powerline+Awesome:size=7, xft:Wucon Siji:antialias:true:size=7
+!URxvt.boldFont: xft:Operator Mono Medium:size=7,xft:SourcePro+Powerline+Awesome:size=7
+
+URxvt.font: -benis-*,xft:crispy:size=8
+URxvt.boldFont: -benis-*,xft:crispy:size=8
+
+
+!Colors:  {{
+! Cursor
+URxvt.cursorBlink:          true
+URxvt.cursorColor:          #E2E2E2
+URxvt.cursorUnderline:      false
+
+! Pointer
+URxvt.pointerBlank:         true
+
+!}}
