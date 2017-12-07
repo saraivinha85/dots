@@ -1,20 +1,26 @@
-### **Dots**
-----------
-My **Thinkpad T430s** running **Arch Linux** with:
-+ `DE:                **bspwm**`
-+ `Kerel:             **linux-zen**`
-+ `Bar:               **polybar**`
-+ `Terminal:          **Urxvt**`
-+ `Font:              **lemon**`
-+ `Notification:`      **dunst**
-+ `File Manager:`      **ranger**
-+ `Image Manager:`     **sxiv**
-+ `Video:`             **mpv**
-+ `Download manager:`  **aria2c**
-+ `Browser:`           **Waterfox**
-+ `Editor:`            **vim**
-+ `Music:`             **mpd** + **ncmpcpp**
+## **Dots**
+My **Thinkpad T430s** running **Arch Linux**.
+---------------
+**Setup**
++ OS: `Arch Linux`
++ Window Manager: `bspwm` / `i3-gaps`
++ Shell: `zsh`
++ Applicantion Launcher: `rofi`
++ Bar: `polybar` / `no bar`
++ Compositor: `compton`
++ Notifications: `dunst` / `libnotify`
++ Music Player: `spotify` / `mpd` + `ncmpcpp`
++ Video Player: `mpv`
++ File Manager: `ranger`
++ Image Viewer: `sxiv`
++ Text Editor: `vim` / `atom`
++ Terminal Emulator: `urxvt`
++ Terminal Multiplexer: `tmux`
++ Web Browser: `Waterfox (Firefox based)`
++ Download Manager: `aria2c`
++ Colorscheme: `pywal`
++ Scripts: `caffeine` / `lock.sh` `toggle-touchpad` / `wal-set` / `walcycle`
 --------------------
-**screenshots**
+***SCREENSHOTS***
 
 ![screenshots](https://raw.githubusercontent.com/xmiah0906/dots/master/scrot/2017-12-08-03-55-32.png "Title")
