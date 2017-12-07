@@ -1,0 +1,37 @@
+export _JAVA_AWT_WM_NONREPARENTING=1
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+fcitx -d &
+redshift -l 10.0167:105.0833 -t 6000:5000 -g 0.95 -m vidmode -v &
+mpd &
+#####################
+xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1 &
+xinput set-prop "TPPS/2 IBM TrackPoint" "libinput Accel Speed" 0.45 & 
+xrdb -merge "$HOME/.Xresources" &
+urxvtd -q -f -o &
+compton --config ~/.config/compton/compton.conf -b &
+compton -b --backend glx -cCfFbG -I 0.05 -D 10 -r4 -l-6 -t-5 -o.99 --vsync opengl-mswc &
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+xsetroot -cursor_name left_ptr &
+###########
+xset +fp /usr/share/fonts/mics
+xset +fp /home/icedreamfeakr/.fonts
+xset fp rehash
+wmname LG3D
+##########
+eval $(/usb/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+export SSH_AUTH_SOCK
+#########
+sh /home/icedreamfeakr/Documents/aria2rpc/aria2-daemon-chrome.sh &
+sh /home/icedreamfeakr/Documents/aria2rpc/on-download-complete.sh &
+sh /home/icedreamfeakr/Documents/aria2rpc/on-download-start.sh &
+############
+
+xset m 1/1
+export DUNST_FONT='Artwiz Lemon 7'
+export DUNST_SIZE='250x20-30+30'
+dunst -fn "$DUNST_FONT" -geometry "$DUNST_SIZE" &
+
+wal -i "$(< "${HOME}/.cache/wal/wal")" &
+wal -R -a 90  &
