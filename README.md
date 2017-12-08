@@ -23,4 +23,4 @@ My **Thinkpad T430s** running **Arch Linux**.
 --------------------
 ***SCREENSHOTS***
 
-![screenshots](https://raw.githubusercontent.com/xmiah0906/dots/master/scrot/2017-12-08-03-55-32.png "Title")
+![screenshots](https://raw.githubusercontent.com/xmiah0906/dots/master/scrot/2017-12-08-08-13-43.png "Screenshots 12-08-2017")
