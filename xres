@@ -66,8 +66,8 @@ URxvt*loginShell:	true
 !URxvt.font: xft:Operator Mono Medium:size=7,xft:SourcePro+Powerline+Awesome:size=7, xft:Wucon Siji:antialias:true:size=7
 !URxvt.boldFont: xft:Operator Mono Medium:size=7,xft:SourcePro+Powerline+Awesome:size=7
 
-URxvt.font: -benis-*,xft:crispy:size=8
-URxvt.boldFont: -benis-*,xft:crispy:size=8
+URxvt.font: -*-lemon-*
+URxvt.boldFont: -*-lemon-*
 
 
 !Colors:  {{
