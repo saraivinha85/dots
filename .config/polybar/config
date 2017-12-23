@@ -1,22 +1,22 @@
 [colors]
-black = ${xrdb:color0}
-red = ${xrdb:color1}
+black  = ${xrdb:color0}
+red    = ${xrdb:color1}
 yellow = ${xrdb:color4}
-white =  ${xrdb:color15}
-green = ${xrdb:color2}
+white  = ${xrdb:color15}
 
 [dims]
 padding = 1
 
 [bar/top]
-width = 100%
-height = 29
+width  = 398
+height = 26
 
-offset-x = 0
-offset-y = 0
+;offset-x = 720
+offset-x = 601
+offset-y = 5
 
-radius = 1
-monitor = LVDS1
+radius            = 3
+monitor           = LVDS1
 overrite-redirect = true
 
 font-0 = Lemon:pixelsize=8;1
@@ -26,139 +26,69 @@ font-3 = unifont:pixelsize=8
 font-4 = Iosevka Medium:size=7;1
 
 background = ${colors.black}
-foreground = ${colors.white}
+foreground = ${colors.red}
 
-line-size = 1
+border-size  = 4
+border-color = ${colors.black}
 
-modules-left = i3 bspwm allow xwindow
-modules-center = date
-modules-right = mpc spotify allow xkeyboard wlan fan temperature pkg volume battery powermenu 
+modules-center = wlan cpu temperature fan volume date battery 
 
-fixed-center = true
-wm-restack = bspwm 
+fixed-center  = true
+wm-restack    = bspwm
 tray-position = center
-;bottom = true
-
-; bspwm
-[module/bspwm]
-type = internal/bspwm
-format = <label-state> <label-mode>
-index-sort = true
-wrapping-scroll = false
-
-;label-focused = %name%
-label-focused = ""
-label-focused-background = ${colors.black}
-label-focused-foreground = ${colors.red}
-;label-focused-overline = ${colors.green}
-label-focused-padding = 2
-
-label-urgent = %name%
-label-urgent-background = ${colors.red}
-label-urgent-foreground = ${colors.black}
-label-urgent-padding = 2
-
-label-empty = %name%
-label-empty-background = ${colors.black}
-label-empty-foreground = ${colors.red}
-label-empty-padding = 2
-
-label-occupied = %name%
-label-occupied-background = ${colors.black}
-label-occupied-foreground = ${colors.white}
-label-occupied-padding = 2
-
-format-padding = 0
-
-;i3
-[module/i3]
-type = internal/i3
-format = <label-state> <label-mode>
-index-sort = true
-wrapping-scroll = false
-
-strip-wsnumbers = true
-ws-icon-0 = 1;
-ws-icon-1 = 2;
-ws-icon-2 = 3;
-ws-icon-3 = 4;
-ws-icon-4 = 5;
-ws-icon-5 = 6;
-ws-icon-6 = 7;
-
-label-mode-padding = 1
-
-label-focused = ""
-label-focused-background = ${colors.black}
-label-focused-foreground = ${colors.red}
-label-focused-padding = ${dims.padding}
-
-label-unfocused = %icon%
-label-unfocused-padding = ${dims.padding}
-label-unfocused-background = ${colors.black}
-
-label-visible = %icon%
-label-visible-background = ${colors.black}
-label-visible-foreground = ${colors.red}
-label-visible-padding = ${dims.padding}
-
-label-urgent = %icon%
-label-urgent-background = ${colors.red}
-label-urgent-foreground = ${colors.black}
-label-urgent-padding = ${dims.padding}
+bottom        = true
 
 ;allow
 [module/allow]
 type = custom/text
 content = " | "
-content-foreground = ${colors.green}
+content-foreground = ${colors.red}
 
-;xwindow
-[module/xwindow]
-type = internal/xwindow
-format-prefix = " "
+[module/wlan]
+type = internal/network
+interface = wlp3s0
+interval = 3.0
 
-format-prefix-foreground = ${colors.red}
+format-connected = <ramp-signal><label-connected>
+label-connected =  " %downspeed:6%  "
+label-connected-foreground = ${colors.white}
 
-label = "%title:0:40:..% "
-;label-font = 5
-label-foreground = ${colors.red}
+format-disconnected =
 
-labal-maxlen = 25
-format-pading = 2
+ramp-signal-0 = ""
+ramp-signal-1 = ""
+ramp-signal-2 = ""
+ramp-signal-3 = ""
+ramp-signal-4 = ""
 
-;xkeyboard
-[module/xkeyboard]
-type = internal/xkeyboard
-blacklist-0 = num lock
-
-format-prefix = " " 
-label-layout = "%layout%  "
-label-layout-foreground = ${colors.red}
+ramp-signal-foreground = ${colors.red}
 
 ; Battery
 [module/battery]
-type = internal/battery
+type    = internal/battery
 battery = BAT0
 adapter = ACAD
 full-at = 95
 
-format-charging = <label-charging>
+format-padding = 1
+
+format-charging            = <label-charging>
 format-charging-foreground = ${colors.yellow}
-format-charging-padding = ${dims.padding}
+format-charging-padding    = ${dims.padding}
 
-format-discharging = <ramp-capacity> <label-discharging>
-format-discharging-foreground = ${colors.white}
-format-discharging-padding = ${dims.padding}
+format-discharging            = <ramp-capacity> <label-discharging>
+format-discharging-padding    = ${dims.padding}
 
-format-full = <label-full>
+format-full            = <label-full>
 format-full-background = ${colors.red}
 format-full-foreground = ${colors.white}
-format-full-padding = ${dims.padding}
+format-full-padding    = ${dims.padding}
 
-label-charging = Charging: %percentage%%
-label-discharging =  "%percentage%%"
-label-full = Full Capacity
+label-charging    = Charging: %percentage%%
+label-discharging = "%percentage%%"
+label-full        = Full Capacity
+
+label-discharging-foreground = ${colors.white}
 
 ramp-capacity-0 = 
 ramp-capacity-1 = 
@@ -172,78 +102,29 @@ type = internal/date
 interval = 1.0
 
 date = "%Y-%M-%d"
-time = %a %d %b - %l:%M %p
-time-alt = %A, %d-%B-%y
 
-;time = %I:%M %p
+time-alt = %a %d %b
+time     = %I:%M %p
 
-label = %time%
-format = <label>
+label             = %time%
+format            = "  <label>"
 format-foreground = ${colors.white}
-format-background = ${colors.black}
-format-padding = ${dims.padding}
-
-;temperature
-[module/temperature]
-type = internal/temperature
-thermal-zone = 0
-warn-temperature = 65
-
-format = <ramp><label>
-format-warn = " <ramp> <label-warn>"
-
-label = "%temperature% "
-label-background = ${colors.black}
-label-warn = "%temperature% "
-label-warn-foreground = ${colors.red}
-label-warn-background = ${colors.black}
-
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-ramp-foreground = ${colors.red}
-
-[module/wlan]
-type = internal/network
-interface = wlp3s0
-interval = 3.0
-
-format-connected = <ramp-signal><label-connected>
-label-connected =  " %downspeed:6% "
-label-connected-foreground = ${colors.white}
-
-format-disconnected =
-
-ramp-signal-0 = " "
-ramp-signal-1 = " "
-ramp-signal-2 = " "
-ramp-signal-3 = " "
-ramp-signal-4 = " "
-
-ramp-signal-foreground = ${colors.red}
-
-;fan
-[module/fan]
-type = custom/script
-format = " <label>  "
-format-foreground = ${colors.red}
-exec-if = sensors
-exec = "sensors | grep fan1 | awk '{print $2,$3}'"
-
-format-prefix = "  "
-format-prefix-background = ${colors.black}
-format-prefix-foreground = ${colors.red}
-
-format-padding = 0
+format-background = ${colors.red}
+format-padding    = 2
 
 ; Volume
 [module/volume]
 type = internal/volume
 
-format-volume = <label-volume>
-label-volume = " %percentage%%"
-label-volume-foreground = ${colors.red}
+format-volume = <ramp-volume><label-volume>
+label-volume = "%percentage%% "
+label-volume-foreground = ${colors.white}
 label-volume-padding = ${dims.padding}
+
+ramp-volume-0 = " "
+ramp-volume-1 = " " 
+ramp-volume-2 = " " 
+ramp-volume-foreground = ${colors.red}
 
 format-muted = <label-muted>
 label-muted =  muted
@@ -251,94 +132,57 @@ label-muted-foreground = ${colors.red}
 label-muted-background = ${colors.black}
 label-muted-padding = ${dims.padding}
 
-; Archlinux updates
-[module/pkg]
-type = custom/script
-
-internal = 1600
-format-prefix = " "
-format-prefix-foreground = ${colors.red}
-format-foreground = ${colors.white} 
-exec = ~/.config/polybar/pkg.sh
-exec-if = "ping -q -w 2 -c 1 176.34.135.167 > /dev/null"
-format-padding = 1
-
-;mpc music
-[module/mpc]
-
-type = custom/script
-tail = true
-exec = ~/bin/mpc.sh
-format-background = ${colors.black}
-format-foreground = ${colors.green}
-
-internal = 2
-format-padding = 1
-
-;spotify
-[module/spotify]
-
-type = custom/script
-tail = true
-exec = ~/.config/polybar/spotify.sh %artist% ▸ %title%
-
-format-background = ${colors.black}
-format-foreground = ${colors.green}
-
-format-prefix = " "
-;format-prefix = "  "
-format-prefix-background = ${colors.black}
-format-prefix-foreground = ${colors.green}
-internal = 1
-
-format-padding = 1
-
 ;cpu
 [module/cpu]
-type = internal/cpu
-
+type     = internal/cpu
 interval = 2
-format-padding = ${dims.padding}
-format-foreground = ${colors.red}
-format-background = ${colors.black}
-format-prefix = "CPU: "
-label = %percentage%%
+
+format-padding    = ${dims.padding}
+format-foreground = ${colors.white}
+format-background = ${colors.red}
+format-prefix     = "  "
+
+label            = "%percentage%%  "
 label-foreground = ${colors.white}
+label-background = ${colors.red}
 
-; powermenu
-[module/powermenu]
-type = custom/menu
+;fan
+[module/fan]
+type = custom/script
+format = " <label>  "
+format-foreground = ${colors.white}
+format-background = ${colors.red}
+exec-if = sensors
+exec = "sensors | grep fan1 | awk '{print $2,$3}'"
 
-format-spacing = 1
-label-open = "  "
+format-prefix = "  "
+format-prefix-background = ${colors.red}
+format-prefix-foreground = ${colors.white}
 
-label-open-foreground = ${colors.red}
-label-open-background = ${colors.black}
-label-close =  cancel
-label-close-foreground = ${colors.yellow}
-label-separator = |
-label-separator-foreground = ${colors.white}
+format-padding = 0
 
-menu-0-0 = suspend
-menu-0-0-exec = menu-open-1
-menu-0-1 = reboot
-menu-0-1-exec = menu-open-2
-menu-0-2 = "poweroff "
-menu-0-2-exec = menu-open-3
+;temperature
+[module/temperature]
+type             = internal/temperature
+thermal-zone     = 0
+warn-temperature = 65
 
-menu-1-0 = SUPEND?
-menu-1-0-exec = systemctl suspend
+format      = <ramp><label>
+format-warn = " <ramp> <label-warn>"
 
-menu-3-0 = POWEROFF?
-menu-3-0-exec = systemctl poweroff
+label                 = "%temperature%  "
+label-foreground      = ${colors.red}
+label-warn            = "%temperature%  "
+label-warn-foreground = ${colors.red}
 
-menu-2-0 = REBOOT?
-menu-2-0-exec = systemctl reboot
-[settings]
-screenchange-reload = true
+ramp-0 = " "
+ramp-1 = " "
+ramp-2 = " "
+
+ramp-foreground = ${colors.white}
 
 [global/wm]
-margin-top = 0
-margin-bottom = 0
+margin-top    = 1
+margin-bottom = 1
 
 ; vim:ft=dosini

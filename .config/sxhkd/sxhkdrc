@@ -17,8 +17,7 @@ super + shift + w
 # program launcher
 
 super + @space
-  rofi -show drun -hide-scrollbar 
-#	rofi -show drun -modi drun -hide-scrollbar
+	rofi -show drun -modi drun -display-run 'Run' -display-drun 'Arch Menu' -hide-scrollbar
 
 super + e
         thunar
@@ -46,15 +45,6 @@ super + v
 
 super + n
     pavucontrol
-
-# toogle polybar
-super + d
-	killall -s 9 polybar && sleep 0 && bspc config top_padding 0 && notify-send " HIDE BAR LOADING -:P "
-
-super + shift + d
-	~/bin/la2nch.sh
-
-# ~/.config/polybar/autohide
 
 # brightness
 XF86MonBrightnessUp
@@ -131,9 +121,7 @@ ctrl + Print
 # Lock Desktop
 
 XF86ScreenSaver
- 	/home/icedreamfeakr/bin/lock.sh; \
-	notify-send "Locked Desktop"
-############################
+ 	/home/icedreamfeakr/bin/lock.sh -l dimblur
 
 # make sxhkd reload its configuration files:
 
