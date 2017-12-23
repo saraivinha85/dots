@@ -33,3 +33,9 @@ My **Thinkpad T430s** running **Arch Linux**.
 * **`no-bar`**
 
 ![screenshots](https://raw.githubusercontent.com/xmiah0906/dots/master/scrot/2017-12-08-08-13-43.png "Screenshots 12-08-2017")
+
+-----------
+
+* **`violets`**
+
+![screenshots](https://raw.githubusercontent.com/xmiah0906/dots/master/scrot/gentoo-violets-polybar.png "ck Gentoo 09-25-2017")
