@@ -23,4 +23,13 @@ My **Thinkpad T430s** running **Arch Linux**.
 --------------------
 ***SCREENSHOTS***
 
+* **`polybar`**
+
+
+![12-13-2017](https://raw.githubusercontent.com/xmiah0906/dots/master/scrot/2017-12-23-08-39-48.png "Polybar 12-23-2017")
+
+------------
+
+* **`no-bar`**
+
 ![screenshots](https://raw.githubusercontent.com/xmiah0906/dots/master/scrot/2017-12-08-08-13-43.png "Screenshots 12-08-2017")
