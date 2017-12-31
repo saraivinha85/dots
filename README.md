@@ -23,6 +23,12 @@ My **Thinkpad T430s** running **Arch Linux**.
 --------------------
 ***SCREENSHOTS***
 
+* **`Rain/W`**
+
+![ITF Viow](https://raw.githubusercontent.com/xmiah0906/dots/master/scrot/2017-12-31-10-00-54.png "Rain-W")
+
+-----------
+
 * **`polybar`**
 
 
