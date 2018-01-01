@@ -15,7 +15,7 @@ offset-x = 592
 offset-y = 4
 
 
-radius            = 1
+radius            = 5
 monitor           = LVDS1
 override-redirect = false
 
@@ -28,14 +28,9 @@ font-4 = Iosevka Medium:size=7;1
 background = ${colors.black}
 foreground = ${colors.red}
 
-border-size  = 4
-border-color = ${colors.black}
-
 modules-left   = bspwm cover
 modules-center = date
 modules-right  = volume battery
-
-#modules-center = wlan cpu temperature fan volume date battery 
 
 fixed-center  = true
 wm-restack    = bspwm
