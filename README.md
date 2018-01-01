@@ -1,7 +1,13 @@
-## **Dots**
-My **Thinkpad T430s** running **Arch Linux**.
+## Dotfiles
+
+![Dotfiles](https://raw.githubusercontent.com/xmiah0906/dots/master/scrot/tux.jpg "My-Dots")
+
+My **Thinkpad T430s** running **Arch Linux**...
+
 ---------------
+
 **Setup**
+
 + OS: `Arch Linux`
 + Window Manager: `bspwm` / `i3-gaps`
 + Shell: `zsh`
@@ -13,13 +19,13 @@ My **Thinkpad T430s** running **Arch Linux**.
 + Video Player: `mpv`
 + File Manager: `ranger`
 + Image Viewer: `sxiv`
-+ Text Editor: `vim` / `atom`
++ Text Editor: `vim` / `Atom`
 + Terminal Emulator: `urxvt`
 + Terminal Multiplexer: `tmux`
 + Web Browser: `Waterfox (Firefox based)`
 + Download Manager: `aria2c`
 + Colorscheme: `pywal`
-+ Scripts: `caffeine` / `lock.sh` `toggle-touchpad` / `wal-set` / `walcycle`
++ Scripts: `caffeine` / `lock.sh`/ `toggle-touchpad` / `wal-set` / `walcycle` / `vol.sh` / `syswh.sh`/ `...`
 --------------------
 ***SCREENSHOTS***
 
