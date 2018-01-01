@@ -54,16 +54,13 @@ XF86MonBrightnessDown
 
 # multimedia keys
 XF86AudioRaiseVolume
-        pulseaudio-ctl up 4
-        #amixer sset PCM 5%+
+	~/bin/vol.sh -i 4
 
 XF86AudioLowerVolume
-        pulseaudio-ctl down 4
-        #amixer sset PCM 5%-
+	~/bin/vol.sh -d 4
 
 XF86AudioMute
-        pulseaudio-ctl mute
-        #amixer -q set Master toggle
+	~/bin/vol.sh -t
 
 XF86AudioMicMute
         pulseaudio-ctl mute-input
@@ -105,7 +102,6 @@ XF86AudioNext
 super + @Print
   ~/bin/scr 
 
-# custom screenshot script: copies it to ~/shots/ and X clipboard
 @Print
         xfce4-screenshooter
 
