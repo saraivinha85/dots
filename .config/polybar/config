@@ -44,9 +44,9 @@ format = <label-state> <label-mode>
 index-sort = true
 wrapping-scroll = false
 
-label-focused            = %name%
+label-focused            = "×"
 label-focused-background = ${colors.black}
-label-focused-foreground = ${colors.white}
+label-focused-foreground = ${colors.blue}
 label-focused-padding    = 1
 
 label-urgent = %name%
@@ -56,12 +56,12 @@ label-urgent-padding = 1
 
 label-empty            = %name%
 label-empty-background = ${colors.black}
-label-empty-foreground = ${colors.blue}
+label-empty-foreground = ${colors.white}
 label-empty-padding    = 1
 
 label-occupied            = %name%
 label-occupied-background = ${colors.black}
-label-occupied-foreground = ${colors.white}
+label-occupied-foreground = ${colors.blue}
 label-occupied-padding    = 1
 
 format-padding = 1
@@ -146,9 +146,7 @@ content-foreground = ${colors.red}
 content-padding    = 1
 click-left         = ~/bin/popup/cover.sh
 click-middle       = ~/bin/cpupower
-click-right        = ~/bin/notify.sh
-
-
+click-right        = ~/bin/music-notify/music.sh
 
 [global/wm]
 margin-top    = 1

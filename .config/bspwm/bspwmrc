@@ -24,7 +24,8 @@ bspc config focused_frame_opacity        0.1
 
 # desktop names
 
-bspc monitor LVDS1 -n 0 -d ─ ─ ─ ─ ─ ─ 
+bspc monitor LVDS1 -n 0 -d ─ ─ ─ ─ ─ ─ ─ 
+
 
 # rules
 # -a takes class_name:instance_name, use xprop to find out the names (WM_CLASS)

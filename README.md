@@ -1,4 +1,7 @@
-## Dotfiles
+### Dots
+
+-------
+
 
 ![Dotfiles](https://raw.githubusercontent.com/xmiah0906/dots/master/scrot/tux.jpg "My-Dots")
 

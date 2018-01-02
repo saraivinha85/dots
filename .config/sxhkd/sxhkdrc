@@ -3,13 +3,13 @@
 # terminal emulator
 
 super + Return
-  urxvtc
+  urxvtc -geometry 77x20
 
 super + shift + Return
   termite
 
 super + ctrl + Return
-	urxvtc -e "ncmpcpp"
+	urxvtc -geometry 70x30 -e "ncmpcpp"
 
 super + shift + w
 	urxvtc -e "htop"
@@ -102,6 +102,7 @@ XF86AudioNext
 super + @Print
   ~/bin/scr 
 
+# custom screenshot script: copies it to ~/shots/ and X clipboard
 @Print
         xfce4-screenshooter
 
