@@ -17,11 +17,18 @@ reload_dunst() {
             -cf "$color15"  \
             -nf "$color15"  \
             -fn "${DUNST_FONT:-Artwiz Lemon 7}" \
-            -geometry "${DUNST_SIZES:-250x10-40+40}" &
+            -geometry "${DUNST_SIZES:-0x0-20+30}" &
+}
+
+reload_bar() {
+	killall -q polybar
+	while pgrep -x polybar > /dev/null; do sleep 1; done
+	polybar top --quiet 
 }
 
 main() {
     reload_dunst &
+		reload_bar &
 }
 
 main >/dev/null 2>&1
