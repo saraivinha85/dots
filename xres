@@ -18,8 +18,8 @@ rofi.show-icons      : true
 
 ! Desktop/Laptop Settings.
 
-URxvt.letterSpace : 0
-URxvt.allow_bold  : true
+URxvt.letterSpace: 0
+URxvt.allow_bold: true
 
 Xft.dpi       : 96
 Xft.autohint  : 0
@@ -32,13 +32,12 @@ Xft.lcdfilter : lcddefault
 ! Disable scrollbar
 URxvt.scrollBar: false
 
-! Separate settings for vim
-vim.internalBorder: 0 
-
 ! Set terminal padding
-URxvt.internalBorder:   15
+URxvt.internalBorder:   10
 URxvt.depth:            32
-URxvt*terminalName:     rxvt-unicode-256color
+URxvt.terminalName:     rxvt-unicode-256color
+URxvt.buffered: 				false
+
 
 ! Enables copy/paste with Ctrl-Shift-C/V
 URxvt.iso14755: false
@@ -52,16 +51,15 @@ Urxvt.matcher.button:	1
 URxvt*loginShell:	true
 
 ! -- font:
-!URxvt.font: -*-lemon-*
-!URxvt.boldFont: -*-lemon-*
+URxvt.font: -*-lemon-*
+URxvt.boldFont: -*-lemon-*
 
-URxvt.font:     xft:scientifica:size=7
-URxvt.boldFont: xft:scientifica:size=7
+!URxvt.font:     xft:scientifica:size=7
+!URxvt.boldFont: xft:scientifica:size=7
 
 !Colors:  {{
 ! Cursor
 URxvt.cursorBlink:          1
-URxvt.cursorColor:          #E2E2E2
 URxvt.cursorUnderline:      false
 
 ! Pointer
