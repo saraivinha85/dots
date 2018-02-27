@@ -32,6 +32,9 @@ My **Thinkpad T430s** running **Arch Linux**...
 --------------------
 ***SCREENSHOTS***
 
+* **`Light/C`**  
+
+![Lighty](https://u.teknik.io/S3Ie7.png "Lighty shots")
 * **`Rain/W`**
 
 ![ITF
