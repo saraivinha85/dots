@@ -3,7 +3,7 @@
 # terminal emulator
 
 super + Return
-  urxvtc -geometry 77x20
+  urxvtc -geometry 70x20
 
 super + shift + Return
   termite
@@ -46,6 +46,12 @@ super + v
 super + n
     pavucontrol
 
+# toogle polybar
+
+super + d
+				killall -s 9 polybar && sleep 0 && bspc config top_padding 0 && notify-send " HIDE BAR LOADING -:P "
+#
+
 # brightness
 XF86MonBrightnessUp
         xbacklight -inc 5
@@ -53,6 +59,7 @@ XF86MonBrightnessDown
         xbacklight -dec 5
 
 # multimedia keys
+
 XF86AudioRaiseVolume
 	~/bin/vol.sh -i 4
 
@@ -127,7 +134,7 @@ super + Escape
 	notify-send "SXHKD RELOADED"
 
 super + F1
-	wal -a 99 -i "$HOME/Imagens/Wallpaper" && ~/bin/wal-set && ~/bin/walcycle.sh 
+	wal -a 97 -l -i "$HOME/Imagens/Wallpaper" && ~/bin/wal-set && ~/bin/walcycle.sh 
 
 #
 # bspwm hotkeys
