@@ -1,0 +1,19 @@
+! --------------------------------------------------------------------------
+! ROFI Color theme
+! --------------------------------------------------------------------------
+
+rofi.color-enabled   : true
+rofi.width           : 40
+rofi.font            : lemon 8
+rofi.hight           : 14
+rofi.separator       : bash
+rofi.sidebare-mode   : false
+rofi.lines           : 10
+rofi.bw              : 2
+rofi.fixed-num-lines : true
+rofi.hide-scrollbar  : true
+rofi.terminal        : urxvtc
+rofi.yoffset         : 36
+rofi.show-icons      : true
+rofi.theme: ~/.cache/wal/colors-rofi-dark.rasi
+
