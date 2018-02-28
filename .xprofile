@@ -9,29 +9,25 @@ mpd &
 xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1 &
 xinput set-prop "TPPS/2 IBM TrackPoint" "libinput Accel Speed" 0.45 & 
 xrdb -merge "$HOME/.Xresources" &
-urxvtd -q -f -o &
-compton --config ~/.config/compton/compton.conf -b &
+urxvtd -q -f -o 
 compton -b --backend glx -cCfFbG -I 0.05 -D 10 -r4 -l-6 -t-5 -o.99 --vsync opengl-mswc &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 xsetroot -cursor_name left_ptr &
 ###########
-xset +fp /usr/share/fonts/mics
+xset +fp /usr/share/fonts/misc
 xset +fp /home/icedreamfeakr/.fonts
 xset fp rehash
 wmname LG3D
 ##########
-eval $(/usb/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 export SSH_AUTH_SOCK
 #########
-sh /home/icedreamfeakr/Documents/aria2rpc/aria2-daemon-chrome.sh &
-sh /home/icedreamfeakr/Documents/aria2rpc/on-download-complete.sh &
-sh /home/icedreamfeakr/Documents/aria2rpc/on-download-start.sh &
-############
+$HOME/bin/lock.sh -u ~/Imagens/Wallpaper/DL4R5X.jpg & 
 
 xset m 1/1
 export DUNST_FONT='Artwiz Lemon 7'
-export DUNST_SIZE='250x20-30+30'
+export DUNST_SIZE='0x0-20+30'
 dunst -fn "$DUNST_FONT" -geometry "$DUNST_SIZE" &
 
-wal -i "$(< "${HOME}/.cache/wal/wal")" &
-wal -R -a 90  &
+wal -l -i "$(< "${HOME}/.cache/wal/wal")" &
+wal -R -l -a 97  &
