@@ -32,6 +32,10 @@ My **Thinkpad T430s** running **Arch Linux**...
 --------------------
 ***SCREENSHOTS***
 
+* **`City/Bokeh`**
+
+![Bokeh](https://u.teknik.io/yNJWa.png "Sad City/P")
+
 * **`Light/C`**  
 
 ![Lighty](https://u.teknik.io/S3Ie7.png "Lighty shots")
